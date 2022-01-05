@@ -22,11 +22,11 @@ wordt gebruikt voor het zoeken van neighbors en gaan een neighbor connectie make
  **1. Down state** 
 - er worden geen Hello packets ontvangent.
 - Router verstuurt wel Hello packets.
--  Router kan overschakelen naar de Init state.
+-  Router kan overschakelen naar de Init state.  
  **2. Init state (initiatie fase)**
  -gaat naar de state als er een Hello packet ontvangen is van de neighbor
  - Het packet bevat het router ID van de neightbor
- - Router schakeld over naar de TWO-way state
+ - Router schakeld over naar de TWO-way state  
  **3. Two-Way state**
  - Tijdens deze fase is de communicatie van beide routers biderectioneel.
  - De routers gaan stemmen voor een DR(Designated router) en BDR( back up DR), dit gebeurt enkel bij multiacces links. Niet bij point to point links.
