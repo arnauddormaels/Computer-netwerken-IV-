@@ -25,7 +25,7 @@ wordt gebruikt voor het zoeken van neighbors en gaan een neighbor connectie make
 -  Router kan overschakelen naar de Init state.  
 
 **2. Init state (initiatie fase)**  
- -gaat naar de state als er een Hello packet ontvangen is van de neighbor
+ - gaat naar de state als er een Hello packet ontvangen is van de neighbor
  - Het packet bevat het router ID van de neightbor
  - Router schakeld over naar de TWO-way state  
 
