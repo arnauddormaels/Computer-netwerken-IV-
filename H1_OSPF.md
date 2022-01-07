@@ -40,6 +40,9 @@ wordt gebruikt voor het zoeken van neighbors en gaan een neighbor connectie make
 |toont lijst van alle neighbor routers (neighbor table), is uniek voor elke router|`show ip ospf neighbor`|
 |toont de lijst van alle routers in het netwerk, is hetzelfde voor alle routers in dezelfde area en LSDB(link-state database)| `show ip osp database`|
 |toont de routing table|`show ip route`|
+||`show ip ospf interface `|
+||`show ip protocols`|
+||`show ip ospf`|
 
 ## Basis van OSPF
 ospf is gebasseerd op het algoritme van dijkstra Shortest-Path-First(SPF) voor het bepalen van het korste pad.  
@@ -59,11 +62,26 @@ maar deze zal dan enkel maar binnen de huideige area blijven. want dit verkeer s
 
 
 ## Designated Router en Back up Designated Router
-De DR word bepaald aan de hand van een electie. 
+De DR word bepaald aan de hand van een electie. (BDR wordt bepaald aan de hand van de router dat op de 2e plaats komt)
 - de router met het hoogste Router ID `Router-rid [rid] `
 - De router met heet hoogste loopback-ip address.
 - De router met het hoogste actieve IP address  
-  
-Elk pakket dat de DR of BDR moet bereiken worden verzonden naar het **multiacces address (224.0.0.6)**. De BDR luistert passief naar deze packetten en gaat enkel de rol de de DR overnemen wanneer deze geen hello packets meet stuurt.
 
+ Het is mogelijk om ook de electie te beïnvloeden door de prioriteitsvalue op een interface zelf aan te passen met dit commando `ip ospf priority [0-255]`, default is 0.
+
+ ### Hello en dead interval
+ 
+Elk pakket dat de DR of BDR moet bereiken worden verzonden naar het **multiacces address (224.0.0.6)**. De BDR luistert passief naar deze packetten en gaat enkel de rol de de DR overnemen wanneer deze geen hello packets meet stuurt. Deze worden verzonden om de 10 seconden **(Hello interval)**.  
+Een router kan 4 intervallen (40s **Dead interval**) wachten voordat die een neighbor als down verklaart. Daarna wordt deze router uit de LSDB (Link-state Database) verwijderd en deze informatie wordt dan gefloodt/verspreidt naar alle routers. Deze 'Timer intervals' kan je zien bij `show ip ospf interface [interface-id]` en de intervals moeten gelijk zijn aan beide van kanten van een link anders gaat deze link falen.
+Je kan deze intervallen aanpassen per interface met de commando's `ip ospf hello-interval [1-...seconds]` en `ip ospf dead-interval [1-... seconds]` (het dead interval wordt automatisch naar 4x het hello-interval.
+
+
+
+## Bandwith metric cost
+Aan de hand van het bandwith commando te gebruiken ga je niet de bandwith aanpassen van de link maar de metric cost aanpassen. Dit doe je omdat OSPF het beste path wilt berkenen en je wilt zelf bepalen welk path de beste metric heeft. Dit doe je aan de hand van 1 van volgende commando's `auto-cost reference-bandwith [0-... in Mbps]` of `ip ospf cost [metric cost]`deze is voor de cost op enkel 1 interface aan te passen. Dit kan je checken via `show ip ospf interface` of `show ip route`
+
+## Default route configureren
+
+dit commando gaat je default route aanpassen`ip route 0.0.0.0 0.0.0.0.0 [next-hop-address]` 
+Dit commando gaat aan iedereen zeggen dat jij de default router bent, voor bv naar het internet te gaan `default-information originate`
 
