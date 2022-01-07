@@ -36,7 +36,7 @@ any voegt de regelt toe aan alle ip addressen dat nog geen Regel hebben gekregen
  |Beschrijving|Commando|
  |---|---|
  |toont de acces-lists met de permits en deny's|`R1(config)# do show acces-list`|
- |Toont de acces-list configuratie| `R1# show run /| section acces-list`|
+ |Toont de acces-list configuratie| `R1# show run \| section acces-list`|
  |Toont de ACL op de interface| `R# show ip int s0/0/0 | include acces list`|
  |Toont de acces-lists| `R1# show acces-lists`
  
