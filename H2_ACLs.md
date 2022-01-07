@@ -44,4 +44,4 @@ any voegt de regelt toe aan alle ip addressen dat nog geen Regel hebben gekregen
  
  |Beschrijving | Commando|
  |---|---| 
- | wijzig een ACE/regel van de ACL| `R1(config)# ip acces-list standard 1` <br> `R1(config-std-nacl)# no 10`: 10 is het standard ip van de regel dit kan je vinden door `R1# show acces-lists` <br> `R1(config-std-nacl)# 10 deny host 192.168.10.10`|
+ | wijzig een ACE/regel van de ACL| `R1(config)# ip acces-list standard 1` <br> `R1(config-std-nacl)# no 10`: 10 is het standard ip van de regel dit kan je vinden door (`R1# show acces-lists`) <br> `R1(config-std-nacl)# 10 deny host 192.168.10.10`|
