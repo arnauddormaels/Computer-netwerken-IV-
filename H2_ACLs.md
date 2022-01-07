@@ -19,7 +19,7 @@ Het host keyword is hetzelfde als 0.0.0.0, deze zegt gewoon dat het ip address g
 any voegt de regelt toe aan alle ip addressen dat nog geen Regel hebben gekregen
 `acces list 10 permit 0.0.0.0 255.255.255.255` is hetzelfde als `acces list 10 permit any`  
   
- EXTRA** ACL bevatten een impliciete deny any op het einde  
+ EXTRA** Elke ACL bevatten een impliciete deny any op het einde  
 
 ## Numbered and Named ACLs
 
@@ -30,8 +30,8 @@ any voegt de regelt toe aan alle ip addressen dat nog geen Regel hebben gekregen
 `ip acces-list extended FTP-FILTER`  
 `Permit tcp 192.168.10.0 0.0.0.255 any eq ftp`  
 `permit tcp 192.168.10.0 0.0.0.255 any eq ftp-data`
- EXTRA ** Extended named filters kunnen ook filteren op IP, TCP, UDP, ICMP  
- 
+ EXTRA ** Extended named filters kunnen ook filteren op IP, TCP, UDP, ICMP  en port numbers  
+
  # Show commands  
  |Beschrijving|Commando|
  |---|---|
