@@ -12,12 +12,12 @@ The wildcard gaat zeggen welke bit je mag negeren. Als de wildcard mask 0.0.0.0 
   
 `acces list 10 deny 192.168.0.1 0.0.0.255` -> alles van 192.168.0.0 tot en met 192.168.168.255 wordt afgeblockt  
 
-**Host en any**
+**Host en any**  
 Het host keyword is hetzelfde als 0.0.0.0, deze zegt gewoon dat het ip address gelijk moet zijn aan het aangegeven ip address
-`acces list 10 permit 192.168.0.1 0.0.0.0` is hetzelfde als `acces list 10 permit host 192.168.0.1`
+`acces list 10 permit 192.168.0.1 0.0.0.0` is hetzelfde als `acces list 10 permit host 192.168.0.1`  
 
 any voegt de regelt toe aan alle ip addressen dat nog geen Regel hebben gekregen
-`acces list 10 permit 0.0.0.0 255.255.255.255` is hetzelfde als `acces list 10 permit any`
+`acces list 10 permit 0.0.0.0 255.255.255.255` is hetzelfde als `acces list 10 permit any`  
   
  EXTRA** ACL bevatten een impliciete deny any op het einde  
 
