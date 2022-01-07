@@ -58,8 +58,12 @@ Er wordt gebruikt gemaakt van meerdere area's. Al deze area's moeten wel verbond
 maar deze zal dan enkel maar binnen de huideige area blijven. want dit verkeer stopt aan de area boundaries.  
 
 
-
-
-
+## Designated Router en Back up Designated Router
+De DR word bepaald aan de hand van een electie. 
+- de router met het hoogste Router ID `Router-rid [rid] `
+- De router met heet hoogste loopback-ip address.
+- De router met het hoogste actieve IP address  
+  
+Elk pakket dat de DR of BDR moet bereiken worden verzonden naar het **multiacces address (224.0.0.6)**. De BDR luistert passief naar deze packetten en gaat enkel de rol de de DR overnemen wanneer deze geen hello packets meet stuurt.
 
 
