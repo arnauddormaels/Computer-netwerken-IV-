@@ -52,7 +52,7 @@ OSPF gaat een OSPF tree maken met elke router, en gaat voor elke router het kort
 alle routers bevinden zich in dezelfde area. Best practice is om area 0 te gebruiken.
 
 ### multiarea OSPF
-Er wordt gebruikt gemaakt van meerdere area's. Al deze area's moeten wel verbonden zijn met de *backbone area (area 0)*. De routers die de connecties maken tussen de verschillende areas worden ook wel *Area Border Routers (ABRs)* genoemd.
+Er wordt gebruikt gemaakt van meerdere area's. Al deze area's moeten wel verbonden zijn met de *backbone area (area 0)*. De routers die de connecties maken tussen de verschillende areas worden ook wel **Area Border Routers (ABRs)** genoemd.
 
 **Voordelen:**
 - Kleinere routing tables: de tables zijn kleiner omdat er minder routing entries zijn. Dit komt omdat de netwerk addressen samengenomen worden tussen de area's. (route summarization is niet enables by default)
@@ -92,4 +92,9 @@ Dit commando gaat aan iedereen zeggen dat jij de default router bent, voor bv na
 |OSPF proces id instellen| `R1(config)# router ospf 1`|
 |Router ID instellen| `R1(config-router)# router-id 1.1.1.1`|
 |Netwerken advertisen| `R1(config-router)# network 10.1.1.0 0.0.0.255 area 1` <br> `R1(config-router)# network 10.1.2.0 0.0.0.255 area 1` <br> `R1(config-router)# network 192.168.10.0 0.0.0.3 area 0`|
+|passive interface instellen <br> Er worden geen updates verstuurd naar dit interface | `RA(config)#router ospf 1` <br>`RA(config-router)#passive-interface g0/0`|
+|||
+
+
+
 
