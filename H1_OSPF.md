@@ -85,11 +85,13 @@ Aan de hand van het bandwith commando te gebruiken ga je niet de bandwith aanpas
 dit commando gaat je default route aanpassen`ip route 0.0.0.0 0.0.0.0.0 [next-hop-address]` 
 Dit commando gaat aan iedereen zeggen dat jij de default router bent, voor bv naar het internet te gaan `default-information originate`
 
-#☺ Excercise 
+#☺ Excercise ☺
 
 |Beschrijving|commando|
 |---|---|
 |OSPF proces id instellen| `R1(config)# router ospf 1`|
 |Router ID instellen| `R1(config-router)# router-id 1.1.1.1`|
-
+|Netwerken advertisen| `R1(config-router)# network 10.1.1.0 0.0.0.255 area 1
+R1(config-router)# network 10.1.2.0 0.0.0.255 area 1
+R1(config-router)# network 192.168.10.0 0.0.0.3 area 0`
 
