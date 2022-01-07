@@ -95,6 +95,13 @@ Dit commando gaat aan iedereen zeggen dat jij de default router bent, voor bv na
 |passive interface instellen <br> Er worden geen updates verstuurd naar dit interface | `RA(config)#router ospf 1` <br>`RA(config-router)#passive-interface g0/0`|
 |||
 
+# Ipv routing 
+|Beschrijving|commando|
+|---|---|
+|enable ipv6 routing |`RB(config)#ipv6 unicast-routing `|
+|link local address instellen op interface| `RB(config-if)#ipv6 address FE80::1 link-local `
+|Enable OSPFv3 routing|`RB(config-if)#ipv6 ospf 1 area 0`|
+|
 
 
 
