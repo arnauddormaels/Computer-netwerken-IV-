@@ -91,5 +91,5 @@ Dit commando gaat aan iedereen zeggen dat jij de default router bent, voor bv na
 |---|---|
 |OSPF proces id instellen| `R1(config)# router ospf 1`|
 |Router ID instellen| `R1(config-router)# router-id 1.1.1.1`|
-|Netwerken advertisen| `R1(config-router)# network 10.1.1.0 0.0.0.255 area 1 <br> R1(config-router)# network 10.1.2.0 0.0.0.255 area 1 <br> R1(config-router)# network 192.168.10.0 0.0.0.3 area 0`|
+|Netwerken advertisen| `R1(config-router)# network 10.1.1.0 0.0.0.255 area 1` <br> `R1(config-router)# network 10.1.2.0 0.0.0.255 area 1` <br> `R1(config-router)# network 192.168.10.0 0.0.0.3 area 0`|
 
